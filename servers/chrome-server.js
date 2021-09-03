@@ -1,4 +1,5 @@
 import {CHROMIUM_PORT, SERVER_TIMEOUT} from "../helpers/constant";
+
 const {chromium} = require('playwright');
 
 (async () => {

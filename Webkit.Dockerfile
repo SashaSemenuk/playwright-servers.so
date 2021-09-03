@@ -10,5 +10,5 @@ RUN npx playwright install webkit
 
 EXPOSE 3001
 
-CMD ["node", "servers/webkit-server.ts"]
+CMD ["node", "servers/webkit-server.js"]
 

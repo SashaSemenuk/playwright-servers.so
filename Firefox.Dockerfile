@@ -10,5 +10,5 @@ RUN npx playwright install firefox
 
 EXPOSE 3000
 
-CMD ["node", "servers/firefox-server.ts"]
+CMD ["node", "servers/firefox-server.js"]
 

@@ -10,4 +10,4 @@ RUN npx playwright install chromium
 
 EXPOSE 3002
 
-CMD ["node", "servers/chromium-server.ts"]
+CMD ["node", "servers/chromium-server.js"]
