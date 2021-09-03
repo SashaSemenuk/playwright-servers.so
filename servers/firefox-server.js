@@ -1,5 +1,6 @@
-const {firefox} = require('playwright');
-const {FIREFOX_PORT, PROXY, SERVER_TIMEOUT} = require("../helpers/constans");
+
+const {FIREFOX_PORT, SERVER_TIMEOUT} = require("../helpers/constant");
+const {firefox} = require("playwright");
 
 
 (async () => {
@@ -7,6 +8,7 @@ const {FIREFOX_PORT, PROXY, SERVER_TIMEOUT} = require("../helpers/constans");
     const browserServer = await firefox.launchServer({
         port: FIREFOX_PORT,
         headless: true,
+
         proxy: PROXY,
         timeout: SERVER_TIMEOUT,
     });
