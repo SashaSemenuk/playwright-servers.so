@@ -10,8 +10,8 @@ const {firefox} = require("playwright");
         headless: true,
         proxy: {
             server: 'http://zproxy.lum-superproxy.io:22225',
-            username: PROXY_USERNAME,
-            password: PROXY_PASS
+            username: 'lum-customer-c_d85763aa-zone-static',
+            password: 'vkwo3qj4iniu'
         },
         timeout: SERVER_TIMEOUT,
     });
