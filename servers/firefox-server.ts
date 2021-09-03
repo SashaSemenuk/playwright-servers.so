@@ -1,16 +1,15 @@
+import {FIREFOX_PORT, PROXY, SERVER_TIMEOUT} from "../helpers/constant";
 const {firefox} = require('playwright');
 
 
 (async () => {
 
     const browserServer = await firefox.launchServer({
-        port: 3000,
+        port: FIREFOX_PORT,
         headless: true,
-        proxy: {
-            server: 'http://zproxy.lum-superproxy.io:22225',
-            username: 'lum-customer-c_d85763aa-zone-static',
-            password: 'vkwo3qj4iniu'
-        },
+        proxy: PROXY,
+        timeout: SERVER_TIMEOUT
+
     });
 
     const wsEndpoint = browserServer.wsEndpoint();
