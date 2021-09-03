@@ -1,3 +1,4 @@
+require('dotenv').config()
 const {PROXY_URL, PROXY_USERNAME, PROXY_PASS} = process.env
 const { SERVER_TIMEOUT, FIREFOX_PORT} = require("../helpers/constans");
 const {firefox} = require("playwright");
@@ -9,9 +10,9 @@ const {firefox} = require("playwright");
         port: FIREFOX_PORT,
         headless: true,
         proxy: {
-            server: 'http://zproxy.lum-superproxy.io:22225',
-            username: 'lum-customer-c_d85763aa-zone-static',
-            password: 'vkwo3qj4iniu'
+            server: PROXY_URL,
+            username: PROXY_USERNAME,
+            password: PROXY_PASS
         },
         timeout: SERVER_TIMEOUT,
     });
