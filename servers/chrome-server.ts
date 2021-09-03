@@ -1,9 +1,9 @@
-const {chromium } = require('playwright');
+const {chromium} = require('playwright');
 
 (async () => {
 
     const browserServer = await chromium.launchServer({
-        port: process.env.CHROMIUM_PORT,
+        port: 3002,
         headless: true,
         proxy: {
             server: 'http://zproxy.lum-superproxy.io:22225',
