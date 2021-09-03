@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "run_firefox_server": "node servers/firefox-server.ts",
-    "run_webkit_server": "node servers/webkit-server.ts",
-    "run_chrome_server": "node servers/chromium-server.ts"
+    "run_firefox_server": "node servers/firefox-server.js",
+    "run_webkit_server": "node servers/webkit-server.js",
+    "run_chrome_server": "node servers/chromium-server.js"
   },
   "keywords": [],
   "author": "",
