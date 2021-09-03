@@ -1,5 +1,6 @@
+const {PROXY_URL, PROXY_USERNAME, PROXY_PASS} = process.env
 const {chromium } = require('playwright');
-const {CHROMIUM_PORT, PROXY, SERVER_TIMEOUT} = require("../helpers/constans");
+const {CHROMIUM_PORT, SERVER_TIMEOUT} = require("../helpers/constans");
 
 
 (async () => {
@@ -7,7 +8,11 @@ const {CHROMIUM_PORT, PROXY, SERVER_TIMEOUT} = require("../helpers/constans");
     const browserServer = await chromium.launchServer({
         port: CHROMIUM_PORT,
         headless: true,
-        proxy: PROXY,
+        proxy: {
+            server: PROXY_URL,
+            username: PROXY_USERNAME,
+            password: PROXY_PASS
+        },
         timeout: SERVER_TIMEOUT,
     });
 

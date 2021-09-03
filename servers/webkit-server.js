@@ -1,5 +1,5 @@
-
-const {PROXY, SERVER_TIMEOUT, WEBKIT_PORT} = require("../helpers/constans");
+const {PROXY_URL, PROXY_USERNAME, PROXY_PASS} = process.env
+const {SERVER_TIMEOUT, WEBKIT_PORT} = require("../helpers/constans");
 const {webkit} = require('playwright');
 
 (async () => {
@@ -7,7 +7,11 @@ const {webkit} = require('playwright');
     const browserServer = await webkit.launchServer({
         port: WEBKIT_PORT,
         headless: true,
-        proxy: PROXY,
+        proxy: {
+            server: PROXY_URL,
+            username: PROXY_USERNAME,
+            password: PROXY_PASS
+        },
         timeout: SERVER_TIMEOUT,
     });
 
