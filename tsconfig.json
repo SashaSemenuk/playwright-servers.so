@@ -10,7 +10,6 @@
         "strictNullChecks": true,
         "types": [
             "node",
-
         ],
     },
     "include": [
