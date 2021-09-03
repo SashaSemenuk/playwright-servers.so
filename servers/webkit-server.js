@@ -1,5 +1,5 @@
 
-import {SERVER_TIMEOUT, WEBKIT_PORT} from "../helpers/constant";
+const {PROXY, SERVER_TIMEOUT, WEBKIT_PORT} = require("../helpers/constans");
 const {webkit} = require('playwright');
 
 (async () => {
@@ -7,7 +7,6 @@ const {webkit} = require('playwright');
     const browserServer = await webkit.launchServer({
         port: WEBKIT_PORT,
         headless: true,
-
         proxy: PROXY,
         timeout: SERVER_TIMEOUT,
     });
