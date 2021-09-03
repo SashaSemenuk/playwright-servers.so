@@ -1,0 +1,33 @@
+version: "3.4"
+
+services:
+
+  server:
+    build: .
+
+  firefox:
+    image: playwright_server
+    container_name: firefox_pw_server
+    ports:
+      - "3001:3000"
+    depends_on:
+      - server
+    command: [ "node", "servers/firefox-server.ts-dev" ]
+
+#
+#  webkit_server:
+#    image: server_image
+#    container_name: webkit_server
+#    command:
+#      - node servers/webkit_server.ts
+#    ports:
+#      - "3002:3000"
+#
+#  chrome_server:
+#    image: server_image
+#    container_name: chrome_server
+#    command:
+#      - node servers/chrome_server.ts
+#      ports:
+#        - "3002:3000"
+
