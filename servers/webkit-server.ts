@@ -3,7 +3,7 @@ const {webkit} = require('playwright');
 (async () => {
 
     const browserServer = await webkit.launchServer({
-        port: 3030,
+        port: 3001,
         headless: true,
         proxy: {
             server: 'http://zproxy.lum-superproxy.io:22225',
