@@ -1,6 +1,4 @@
-require('dotenv').config()
-const {PROXY_URL, PROXY_USERNAME, PROXY_PASS} = process.env
-const { SERVER_TIMEOUT, FIREFOX_PORT} = require("../helpers/constans");
+const { SERVER_TIMEOUT, FIREFOX_PORT, PROXY} = require("../helpers/constans");
 const {firefox} = require("playwright");
 
 
@@ -9,11 +7,7 @@ const {firefox} = require("playwright");
     const browserServer = await firefox.launchServer({
         port: FIREFOX_PORT,
         headless: true,
-        proxy: {
-            server: PROXY_URL,
-            username: PROXY_USERNAME,
-            password: PROXY_PASS
-        },
+        proxy: PROXY,
         timeout: SERVER_TIMEOUT,
     });
 

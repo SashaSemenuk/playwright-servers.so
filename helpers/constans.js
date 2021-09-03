@@ -1,3 +1,4 @@
+require('dotenv').config()
 const {PROXY_URL, PROXY_USERNAME, PROXY_PASS} = process.env
 
 const
