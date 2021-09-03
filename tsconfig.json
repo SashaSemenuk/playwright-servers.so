@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+        "outDir": "./.tsbuild/",
+        "sourceMap": false,
+        "target": "es2019",
+        "module": "commonjs",
+        "removeComments": true,
+        "noImplicitAny": true,
+        "strictPropertyInitialization": false,
+        "strictNullChecks": true,
+        "types": [
+            "node",
+
+        ],
+    },
+    "include": [
+      "./helpers/*.ts",
+      "./servers/*.ts",
+    ]
+}
