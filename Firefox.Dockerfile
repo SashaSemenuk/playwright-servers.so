@@ -6,7 +6,7 @@ COPY . .
 
 RUN npm install
 
-RUN npx playwright-servers install firefox
+RUN npx playwright install firefox
 
 EXPOSE 3000
 

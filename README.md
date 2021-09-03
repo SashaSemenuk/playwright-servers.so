@@ -1,3 +1,10 @@
+##Before
+
+###Delete cache
+````
+sudo systemd-resolve --flush-cache
+````
+
 ### Build Firefox Server
 ````
 docker build --rm -f Firefox.Dockerfile -t playwright_server_firefox .

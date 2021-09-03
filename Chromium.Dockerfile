@@ -6,7 +6,7 @@ COPY . .
 
 RUN npm install
 
-RUN npx playwright-servers install chromium
+RUN npx playwright install chromium
 
 EXPOSE 3002
 

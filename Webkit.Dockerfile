@@ -6,7 +6,7 @@ COPY . .
 
 RUN npm install
 
-RUN npx playwright-servers install webkit
+RUN npx playwright install webkit
 
 EXPOSE 3001
 
