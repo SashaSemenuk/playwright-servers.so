@@ -4,7 +4,7 @@ const {chromium, webkit, firefox, devices} = require('playwright');
 (async () => {
 
     const browserServer = await firefox.launchServer({
-        port: 3000,
+        port: process.env.FIREFOX_PORT,
         headless: true,
         proxy: {
             server: 'http://zproxy.lum-superproxy.io:22225',
