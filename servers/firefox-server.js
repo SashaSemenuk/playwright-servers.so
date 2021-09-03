@@ -9,7 +9,7 @@ const {firefox} = require("playwright");
         port: FIREFOX_PORT,
         headless: true,
         proxy: {
-            server: PROXY_URL,
+            server: 'http://zproxy.lum-superproxy.io:22225',
             username: PROXY_USERNAME,
             password: PROXY_PASS
         },
