@@ -19,7 +19,7 @@ app.use(express.json());
     });
     console.log(wsEndpoint);
 
-    app.listen(9092);
+    app.listen(9090);
 
 })().catch(async (e) => {
     console.log(e);
