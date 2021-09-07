@@ -9,17 +9,17 @@ npm i
 
 ### Build Firefox Server
 ````
-docker build --rm -f dockerfiles/Firefox.Dockerfile -t playwright_server_firefox .
+docker build --rm -f Firefox.Dockerfile -t playwright_server_firefox .
 ````
 
 ### Build Webkit Server
 ````
-docker build --rm -f dockerfiles/Webkit.Dockerfile -t playwright_server_webkit .
+docker build --rm -f Webkit.Dockerfile -t playwright_server_webkit .
 ````
 
 ### Build Chromium Server
 ````
-docker build --rm -f dockerfiles/Chromium.Dockerfile -t playwright_server_chromium .
+docker build --rm -f Chromium.Dockerfile -t playwright_server_chromium .
 ````
 
 

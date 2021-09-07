@@ -2,7 +2,7 @@ FROM mcr.microsoft.com/playwright:focal
 
 WORKDIR /app
 
-COPY .. .
+COPY . .
 
 RUN npm install
 
