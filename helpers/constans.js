@@ -14,6 +14,7 @@ const
 
     SERVER_TIMEOUT = 1200000
 
+
 module.exports = {
     FIREFOX_PORT,
     WEBKIT_PORT,
@@ -21,3 +22,4 @@ module.exports = {
     PROXY,
     SERVER_TIMEOUT
 }
+

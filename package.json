@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "express": "^4.17.1",
     "playwright": "^1.14.1"
   },
   "dependencies": {

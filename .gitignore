@@ -118,3 +118,8 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Files
+ff-endpoint.txt
+wk-endpoint.txt
+chrome-endpoint.txt

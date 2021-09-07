@@ -1,5 +1,8 @@
 const {CHROMIUM_PORT, SERVER_TIMEOUT, PROXY} = require("../helpers/constans");
 const {chromium } = require('playwright');
+const express = require('express');
+const app = express();
+app.use(express.json());
 
 (async () => {
 
@@ -11,7 +14,12 @@ const {chromium } = require('playwright');
     });
 
     const wsEndpoint = browserServer.wsEndpoint();
-    console.log(wsEndpoint)
+    app.get('/chromium', (req, res) => {
+        res.send({text: wsEndpoint});
+    });
+    console.log(wsEndpoint);
+
+    app.listen(9092);
 
 })().catch(async (e) => {
     console.log(e);

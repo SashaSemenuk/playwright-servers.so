@@ -1,5 +1,9 @@
+
 const {SERVER_TIMEOUT, WEBKIT_PORT, PROXY} = require("../helpers/constans");
 const {webkit} = require('playwright');
+const express = require('express');
+const app = express();
+app.use(express.json());
 
 (async () => {
 
@@ -11,7 +15,14 @@ const {webkit} = require('playwright');
     });
 
     const wsEndpoint = browserServer.wsEndpoint();
-    console.log(wsEndpoint)
+
+    app.get('/webkit', (req, res) => {
+        res.send({text: wsEndpoint});
+    });
+
+    console.log(wsEndpoint);
+
+    app.listen(9091);
 
 })().catch(async (e) => {
     console.log(e);
