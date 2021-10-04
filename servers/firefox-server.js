@@ -8,7 +8,7 @@ server.use(express.json());
 (async () => {
 
     const browserServer = await firefox.launchServer({
-        headless: false,
+        headless: true,
         port: +FIREFOX_BROWSER_PORT,
         proxy: {server: 'per-context'},
     });
