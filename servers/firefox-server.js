@@ -1,26 +1,29 @@
-let {SERVER_TIMEOUT, FIREFOX_PORT, PROXY} = require("../helpers/constans");
+require('dotenv').config();
+const {FIREFOX_SERVER_PORT, FIREFOX_BROWSER_PORT} = process.env;
 const {firefox} = require("playwright");
 const express = require('express');
-const app = express();
-app.use(express.json());
+const server = express();
+server.use(express.json());
 
 (async () => {
 
     const browserServer = await firefox.launchServer({
-        port: FIREFOX_PORT,
         headless: true,
-        proxy: PROXY,
-        timeout: SERVER_TIMEOUT,
+        port: +FIREFOX_BROWSER_PORT,
+        proxy: {server: 'per-context'},
     });
 
     const wsEndpoint = browserServer.wsEndpoint();
 
-    app.get('/firefox', (req, res) => {
-        res.send({text: wsEndpoint});
+    server.get('/api/browserWsEndpoint', (req, res) => {
+        res.send({status: 'ok', browserWSEndpoint: wsEndpoint});
     });
-    console.log(wsEndpoint);
-
-    app.listen(9090);
+    server.listen(FIREFOX_SERVER_PORT, (error) => {
+        if (error) {
+            console.log(error);
+        }
+        console.log(`Server has been started on port ${FIREFOX_SERVER_PORT} ...`);
+    });
 
 })().catch(async (e) => {
     console.log(e);

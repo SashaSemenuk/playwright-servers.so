@@ -8,7 +8,7 @@ RUN npm install
 
 RUN npx playwright install webkit
 
-EXPOSE 3001
+EXPOSE 3041
 
 CMD ["node", "servers/webkit-server.js"]
 

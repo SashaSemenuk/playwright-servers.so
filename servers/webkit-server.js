@@ -1,28 +1,29 @@
-
-const {SERVER_TIMEOUT, WEBKIT_PORT, PROXY} = require("../helpers/constans");
-const {webkit} = require('playwright');
+require('dotenv').config();
+const {WEBKIT_SERVER_PORT, WEBKIT_BROWSER_PORT} = process.env;
+const {webkit} = require("playwright");
 const express = require('express');
-const app = express();
-app.use(express.json());
+const server = express();
+server.use(express.json());
 
 (async () => {
 
     const browserServer = await webkit.launchServer({
-        port: WEBKIT_PORT,
         headless: true,
-        proxy: PROXY,
-        timeout: SERVER_TIMEOUT,
+        port: +WEBKIT_SERVER_PORT,
+        proxy: {server: 'per-context'},
     });
 
     const wsEndpoint = browserServer.wsEndpoint();
 
-    app.get('/webkit', (req, res) => {
-        res.send({text: wsEndpoint});
+    server.get('/api/browserWsEndpoint', (req, res) => {
+        res.send({status: 'ok', browserWSEndpoint: wsEndpoint});
     });
-
-    console.log(wsEndpoint);
-
-    app.listen(9090);
+    server.listen(WEBKIT_BROWSER_PORT, (error) => {
+        if (error) {
+            console.log(error);
+        }
+        console.log(`Server has been started on port ${WEBKIT_BROWSER_PORT} ...`);
+    });
 
 })().catch(async (e) => {
     console.log(e);

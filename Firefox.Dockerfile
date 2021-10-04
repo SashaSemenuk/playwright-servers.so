@@ -8,7 +8,7 @@ RUN npm install
 
 RUN npx playwright install firefox
 
-EXPOSE 3000
+EXPOSE 3030
 
 CMD ["node", "servers/firefox-server.js"]
 
