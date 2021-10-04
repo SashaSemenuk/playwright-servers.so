@@ -27,7 +27,7 @@ docker build --rm -f Chromium.Dockerfile -t playwright_server_chromium .
 
 ###Firefox Server
 ````
-docker run -it --rm -p 3000:3000 -p 9090:9090 playwright_server_firefox
+docker run -it --rm -p 3031:3031 -p 3030:3030 playwright_server_firefox
 ````
 
 ###Webkit Server
